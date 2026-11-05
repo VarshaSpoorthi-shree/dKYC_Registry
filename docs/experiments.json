@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "date": "2026-11-03T13:56:13.588Z",
+    "oracles": 5,
+    "note": "full transaction gas from receipts"
+  },
+  "baseline": {
+    "screeningTotal": 39413,
+    "accessKYC": 39979
+  },
+  "quorum": [
+    {
+      "k": 1,
+      "nonFinalVote": null,
+      "finalVote": 68982,
+      "screeningTotal": 68982,
+      "rescreenRequest": 61217,
+      "rescreenTotal": 130199,
+      "finalStatus": 2
+    },
+    {
+      "k": 2,
+      "nonFinalVote": 59984,
+      "finalVote": 68982,
+      "screeningTotal": 128966,
+      "rescreenRequest": 61217,
+      "rescreenTotal": 187383,
+      "finalStatus": 2
+    },
+    {
+      "k": 3,
+      "nonFinalVote": 59984,
+      "finalVote": 68982,
+      "screeningTotal": 188950,
+      "rescreenRequest": 61217,
+      "rescreenTotal": 247319,
+      "finalStatus": 2
+    },
+    {
+      "k": 4,
+      "nonFinalVote": 59984,
+      "finalVote": 68982,
+      "screeningTotal": 248934,
+      "rescreenRequest": 61217,
+      "rescreenTotal": 310139,
+      "finalStatus": 2
+    },
+    {
+      "k": 5,
+      "nonFinalVote": 59984,
+      "finalVote": 68982,
+      "screeningTotal": 308918,
+      "rescreenRequest": 61217,
+      "rescreenTotal": 370063,
+      "finalStatus": 2
+    }
+  ],
+  "review": {
+    "votes": [
+      59552,
+      59552,
+      67755
+    ],
+    "statusAfterVotes": 4,
+    "resolveReview": 34307,
+    "statusAfterResolve": 2
+  },
+  "freshness": {
+    "setPolicy": 47808,
+    "accessNoPolicy": 42551,
+    "accessWithPolicy": 42921,
+    "accessStale": 42921,
+    "validForStaleAfter2Days": false
+  }
+}

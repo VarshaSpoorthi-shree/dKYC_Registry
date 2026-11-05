@@ -1,0 +1,11 @@
+node_modules/
+out/
+cache/
+broadcast/
+.env
+data/vault/
+data/cache/
+data/screening-reports/
+data/vault-access-log.jsonl
+data/deployment.json
+data/.vault-dev-key

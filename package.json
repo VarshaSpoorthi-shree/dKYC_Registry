@@ -1,0 +1,24 @@
+{
+  "name": "decentralized-kyc-registry",
+  "version": "1.0.0",
+  "description": "Decentralized KYC / Digital Identity Sharing Registry \u2014 consent-based, privacy-preserving, reusable KYC on Ethereum",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "forge build",
+    "test": "forge test -vv && node --test server/screening.test.js",
+    "test:gas": "forge test --gas-report",
+    "chain": "anvil",
+    "deploy": "forge build && node scripts/deploy.js",
+    "start": "node server/index.js",
+    "demo": "node scripts/demo.js",
+    "reset": "node scripts/reset.js",
+    "test:contracts": "forge test -vv",
+    "test:server": "node --test server/screening.test.js",
+    "experiments": "node scripts/experiments.js"
+  },
+  "license": "MIT"
+}

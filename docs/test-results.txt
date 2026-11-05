@@ -1,0 +1,68 @@
+No files changed, compilation skipped
+
+Ran 29 tests for test/KYCRegistry.t.sol:KYCRegistryTest
+[PASS] testFuzz_ConsentScopesAreEnforced(uint8) (runs: 256, μ: 520669, ~: 520674)
+[PASS] test_AccessIsAuditLogged() (gas: 520707)
+[PASS] test_AttributeCheckNeedsAttributeScope() (gas: 508888)
+[PASS] test_AttributeCommitmentBoundToUser() (gas: 411941)
+[PASS] test_BankBlockedWithoutConsent() (gas: 415132)
+[PASS] test_CannotConsentToNonInstitution() (gas: 184957)
+[PASS] test_ConsentExpires() (gas: 508105)
+[PASS] test_ConsentFlowEndToEnd() (gas: 608502)
+[PASS] test_DeregisteredInstitutionLosesAccess() (gas: 517879)
+[PASS] test_InstitutionWithoutRiskConsentCannotTriggerScreening() (gas: 419413)
+[PASS] test_KYCExpires() (gas: 331052)
+[PASS] test_OnlyAdminRegistersOrgs() (gas: 14805)
+[PASS] test_OnlyOracleCanFulfill() (gas: 373990)
+[PASS] test_OnlyProviderCanVerify() (gas: 187441)
+[PASS] test_OnlyVerifyingProviderOrAdminCanRevoke() (gas: 420100)
+[PASS] test_PauseBlocksWrites() (gas: 42647)
+[PASS] test_PerpetualRescreeningCanFlagLater() (gas: 473888)
+[PASS] test_RegisterStoresOnlyCommitments() (gas: 188130)
+[PASS] test_RejectThenResubmit() (gas: 202285)
+[PASS] test_RevertWhen_EmptyCommitment() (gas: 13649)
+[PASS] test_RevertWhen_FulfillTwiceOrUnknown() (gas: 412885)
+[PASS] test_RevertWhen_RegisteringTwiceWhilePending() (gas: 181157)
+[PASS] test_RevokeConsent() (gas: 514232)
+[PASS] test_SanctionsHitInvalidatesKYC() (gas: 415918)
+[PASS] test_SelectiveDisclosure() (gas: 525335)
+[PASS] test_StatusOnlyConsentHidesRisk() (gas: 515807)
+[PASS] test_StrangerCannotReadIdentity() (gas: 192753)
+[PASS] test_ValidAfterClearScreening() (gas: 407677)
+[PASS] test_VerifiedButNotValidUntilScreened() (gas: 376014)
+Suite result: ok. 29 passed; 0 failed; 0 skipped; finished in 114.22ms (114.00ms CPU time)
+
+Ran 22 tests for test/QuorumFreshness.t.sol:QuorumFreshnessTest
+[PASS] testFuzz_FreshnessBoundary(uint64,uint64) (runs: 256, μ: 492288, ~: 492265)
+[PASS] testFuzz_QuorumOutcome(bool,bool,bool) (runs: 256, μ: 366498, ~: 366296)
+[PASS] test_BankRestoresFreshnessByRescreening() (gas: 563334)
+[PASS] test_DisagreementEscalatesToReview() (gas: 337223)
+[PASS] test_LateVoteAfterFinalisationRejected() (gas: 332132)
+[PASS] test_NoPolicyMeansNoFreshnessCheck() (gas: 463665)
+[PASS] test_OnlyAdminResolvesReview() (gas: 331163)
+[PASS] test_OnlyAdminSetsQuorum() (gas: 13444)
+[PASS] test_OnlyInstitutionSetsPolicy() (gas: 13422)
+[PASS] test_OracleCannotVoteTwice() (gas: 290415)
+[PASS] test_OracleCountTracksRoles() (gas: 29286)
+[PASS] test_PolicyBounds() (gas: 49776)
+[PASS] test_QuorumCannotExceedOracleCount() (gas: 20025)
+[PASS] test_QuorumShrinksWhenOracleRemoved() (gas: 33041)
+[PASS] test_RegulatorResolvesReview() (gas: 332684)
+[PASS] test_RescreenKeepsServiceUntilResult() (gas: 316124)
+[PASS] test_ResolveRequiresReviewState() (gas: 288305)
+[PASS] test_SingleCompromisedOracleCannotClearAlone() (gas: 370211)
+[PASS] test_SingleVoteNotFinalWithQuorumTwo() (gas: 300041)
+[PASS] test_StaleScreeningInvalidForStrictBankOnly() (gas: 544311)
+[PASS] test_UnanimousClearFinalises() (gas: 335013)
+[PASS] test_UnanimousHitFinalises() (gas: 340588)
+Suite result: ok. 22 passed; 0 failed; 0 skipped; finished in 156.23ms (158.73ms CPU time)
+
+Ran 2 test suites in 162.06ms (270.44ms CPU time): 51 tests passed, 0 failed, 0 skipped (51 total tests)
+ok 1 - normalize strips accents, titles and punctuation
+ok 2 - jaro-winkler basics
+ok 3 - name matching is order-insensitive and typo tolerant
+ok 4 - OFAC CSV parser keeps individuals only and reorders names
+ok 5 - screen() hits on OFAC and local lists, clears innocent names
+ok 6 - different known DOB reduces false positives
+# pass 6
+# fail 0

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>dKYC Registry</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230f3d3e'/><path d='M9 16.5l4.5 4.5L23 11.5' stroke='%23d9f99d' stroke-width='3.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><rect width="32" height="32" rx="8" /><path d="M9 16.5l4.5 4.5L23 11.5" /></svg>
+      </span>
+      <div>
+        <div class="brand-name">dKYC Registry</div>
+        <div class="brand-sub">KYC once · reuse everywhere · with consent</div>
+      </div>
+    </div>
+    <div class="chain" id="chainInfo">connecting…</div>
+    <div class="account">
+      <label for="accountSelect" class="sr">Acting as</label>
+      <select id="accountSelect"></select>
+      <div id="accountMeta" class="account-meta"></div>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button data-tab="customer" class="active">Customer</button>
+    <button data-tab="provider">KYC Provider</button>
+    <button data-tab="institution">Bank / FinTech</button>
+    <button data-tab="regulator">Regulator</button>
+    <button data-tab="about">How it works</button>
+  </nav>
+
+  <main id="view"></main>
+
+  <div id="toasts" aria-live="polite"></div>
+  <dialog id="modal"><div id="modalBody"></div><form method="dialog"><button class="btn ghost">Close</button></form></dialog>
+
+  <script src="ethers.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

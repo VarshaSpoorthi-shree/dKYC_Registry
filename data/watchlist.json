@@ -1,0 +1,6 @@
+[
+  { "name": "Viktor Mordant", "aliases": ["Viktor A. Mordant", "V. Mordant"], "dob": "1971-02-03", "list": "DEMO Sanctions List", "category": "sanctions", "program": "DEMO-FRAUD", "ref": "DEMO-0001" },
+  { "name": "Selina Kraviec", "aliases": [], "dob": null, "list": "DEMO Sanctions List", "category": "sanctions", "program": "DEMO-TERRFIN", "ref": "DEMO-0002" },
+  { "name": "Rajan Malhotra Devgan", "aliases": ["R. M. Devgan"], "dob": "1960-09-15", "list": "DEMO PEP List", "category": "pep", "program": "Senior public official (fictional)", "ref": "DEMO-PEP-0003" },
+  { "name": "Oskar Bellweather", "aliases": [], "dob": null, "list": "DEMO Sanctions List", "category": "sanctions", "program": "DEMO-CYBER", "ref": "DEMO-0004" }
+]

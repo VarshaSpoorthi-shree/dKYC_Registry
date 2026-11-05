@@ -1,0 +1,59 @@
+Decentralized KYC Registry — end-to-end demo  (API http://localhost:3000)
+   ✓ API server reachable
+
+1. Aarav registers once (customer)
+   ✓ encrypted bundle stored in vault (vault://8e7f6d514de6c45715e79476aaecb13f, sha256 0xa40b894a2119…)
+   ✓ identity commitment anchored on-chain → status Pending (no PII on-chain)
+
+2. TrustVerify (KYC provider) verifies Aarav
+   ✓ provider opened documents; ciphertext hash matches on-chain anchor
+   ✓ identity commitment recomputed from documents = on-chain value
+   ✓ claim AGE_OVER_18=true checked against documents
+   ✓ claim NATIONALITY=IN checked against documents
+   ✓ claim COUNTRY_OF_RESIDENCE=IN checked against documents
+   ✓ provider approved: tier 2, risk Low, valid 365 days, 3 attribute commitments anchored
+   ✓ not yet valid: waiting for sanctions/PEP screening
+
+3. Oracle screens Aarav against sanctions / PEP lists
+   ✓ screening result: Clear
+   ✓ Aarav's KYC is now VALID and reusable
+
+4. Bank Alpha tries to read Aarav's KYC without consent
+   ✓ reverted with NoConsent
+
+5. Bank Alpha requests access; Aarav grants STATUS+RISK+ATTRIBUTES for 30 days
+   ✓ Aarav sees access request: "Savings account opening"
+
+6. Bank Alpha reuses the KYC — no new paperwork
+   ✓ valid=true, tier=2, status=Verified, screening=Clear
+   ✓ access written to immutable on-chain audit log (KYCAccessed)
+
+7. Selective disclosure: Aarav proves AGE_OVER_18 without revealing his date of birth
+   ✓ AGE_OVER_18 = true verified against on-chain commitment
+   ✓ forged NATIONALITY=US rejected
+
+8. Document vault enforces on-chain consent
+   ✓ Bank Alpha denied documents (consent lacks SCOPE_DOCUMENTS)
+   ✓ after consent upgrade, documents released with integrity proof
+
+9. NeoPay (other institution) is still blocked
+   ✓ reverted with NoConsent
+
+10. Viktor (watchlisted name) goes through the same flow
+   ✓ encrypted bundle stored in vault (vault://0e343af054c3c536344ad1d3ebdd5bc0, sha256 0x59eab33ee1e3…)
+   ✓ identity commitment anchored on-chain → status Pending (no PII on-chain)
+   ✓ provider opened documents; ciphertext hash matches on-chain anchor
+   ✓ identity commitment recomputed from documents = on-chain value
+   ✓ claim AGE_OVER_18=true checked against documents
+   ✓ claim NATIONALITY=XX checked against documents
+   ✓ claim COUNTRY_OF_RESIDENCE=IN checked against documents
+   ✓ provider approved: tier 2, risk Low, valid 365 days, 3 attribute commitments anchored
+   ✓ oracle flagged a sanctions HIT
+   ✓ Viktor's KYC is INVALID everywhere; risk forced to High
+   ✓ evidence report: matched "Viktor Mordant" on DEMO Sanctions List (score 1)
+
+11. Aarav revokes Bank Alpha's consent
+   ✓ reverted with NoConsent
+
+All steps passed — KYC once, reuse everywhere, with consent.
+
